@@ -1854,7 +1854,9 @@ def main(args=sys.argv):
     doc_viewer.start()
 
 if __name__ == '__main__':
-    #logging.basicConfig(filename='termpdf.log',level=logging.DEBUG)
-    logging.basicConfig(filename='termpdf.log',level=logging.WARNING)
+    logfile = os.path.expanduser(os.path.join(os.getenv("XDG_CACHE_HOME", "~/.cache"), 'termpdf', 'termpdf.log'))
+    dirname = os.path.dirname(logfile)
+    os.makedirs(dirname, exist_ok=True)
+    logging.basicConfig(filename=logfile,level=logging.WARNING)
     main()
 
