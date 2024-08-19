@@ -9,7 +9,7 @@ setup(name='termpdf.py',
       author_email='dsanson@gmail.com',
       url='https://github.com/dsanson/termpdf.py',
       scripts=['termpdf.py'],
-      requires=[
+      install_requires=[
           'PyMuPDF', 
           'pyperclip', 
           'pdfrw', 
